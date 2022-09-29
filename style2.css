@@ -1,0 +1,37 @@
+:root {
+    --columns: 160;
+    --rows: 102;
+    --pixelSize: 4px;
+    --color0: #000000;
+    --color1: #47A400;
+    --color2: #FFC33B;
+    --color4: #FF07D7;
+    --color3: #000000;
+    --color5: #005F00;
+    --color6: #17F2FF;
+    --color7: #FF82B5;
+  }
+
+#grid {
+  display: grid;
+  grid-template-columns: repeat(var(--columns), var(--pixelSize));
+  grid-template-rows: repeat(var(--rows), var(--pixelSize));
+  gap: 0px 0px;
+}
+
+.metacol {
+    display: grid;
+    grid-template: 1fr / repeat(4, var(--pixelSize));
+    grid-column: auto / span 4;
+}
+
+.attr0 .color0 { background: var(--color0); }
+.attr1 .color0 { background: var(--color4); }
+
+.color0 {
+    border-top: 1px groove gray;
+    height: var(--pixelSize);
+    width: var(--pixelSize);
+}
+
+.color0:nth-child(2n){ opacity: 0.85; }
